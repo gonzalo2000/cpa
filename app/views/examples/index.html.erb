@@ -7,7 +7,7 @@
 
   <% unless user_signed_in? %>
     
-    <p>You are not signed in. To access this resource, <%= link_to('log in', new_user_session_path) %> to access this resource.</p>
+    <p>You are not signed in. <%= link_to('Log in', new_user_session_path) %> to access this resource.</p>
   
   <% else %>
     <p>This website contains examples of CPA submissions to facilitate county-wide grade calibration.
