@@ -1,22 +1,42 @@
 <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <%= link_to "CPAs WorkingTitle", root_path, :class => "navbar-brand" %>
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon"></span>
+  </button>
+  
+  <%= link_to "CPAs WorkingTitle", root_path, :class => "navbar-brand" %>
 
-      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-        <ul class="nav navbar-nav ml-auto w-100 justify-content-end">
-          <% if user_signed_in? %>
-            <li class="nav-item">
-              <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'nav-link' %>
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+    <ul class="nav navbar-nav ml-auto w-100 justify-content-end">
+
+      <% if user_signed_in? %>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Languages
+          </a>
+          
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Spanish</a>
+            <a class="dropdown-item" href="#">French</a>
+            <a class="dropdown-item" href="#">German</a>
+            <a class="dropdown-item" href="#">ASL</a>
+            <a class="dropdown-item" href="#">SFS</a>
+            <a class="dropdown-item" href="#">Latin</a>
+            <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">FAQs</a>
+            </div>
+        </li>
+        
+        <div class="dropdown-divider"></div>
+          <li class="nav-item">
+            <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'nav-link' %>
             </li>
           <% else %>
             <li class="nav-item">
               <%= link_to 'Sign in', new_user_session_path, class: 'nav-link' %>
             </li>
           <% end %>
-        </ul>
-      </div>
-    </nav>
+    </ul>
+  </div>
+</nav>
 
     
