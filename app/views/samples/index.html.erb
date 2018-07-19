@@ -9,7 +9,8 @@
     LEVEL: <%= sample.level %> <br>
     SCORE: <%= sample.score %>%<br>
     MODE: <%= sample.mode %><br>
-    INSTRUCTIONS: <%= sample.instruction %><br>
+    INSTRUCTIONS: <%= link_to "Download", sample.instruction.url, target: :_blank %><br>
+    STUDENT SUBMISSION: <%= link_to "Download", sample.submission.url, target: :_blank %><br>
 
     
     <!-- Button trigger modal -->

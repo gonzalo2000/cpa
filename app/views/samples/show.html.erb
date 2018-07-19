@@ -27,7 +27,12 @@
 
 <p>
   <strong>Instructions:</strong>
-  <%= @sample.instruction %>
+  <%= link_to "Download Instructions", @sample.instruction.url, target: :_blank %>
+</p>
+
+<p>
+  <strong>Submission:</strong>
+  <%= link_to "Download Submission", @sample.submission.url, target: :_blank %>
 </p>
 
 <%= link_to 'Edit', edit_sample_path(@sample) %> |
