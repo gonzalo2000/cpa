@@ -11,18 +11,13 @@
       <% if user_signed_in? %>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Languages
+          Menu
           </a>
           
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Spanish</a>
-            <a class="dropdown-item" href="#">French</a>
-            <a class="dropdown-item" href="#">German</a>
-            <a class="dropdown-item" href="#">ASL</a>
-            <a class="dropdown-item" href="#">SFS</a>
-            <a class="dropdown-item" href="#">Latin</a>
+            <%= link_to('CPA Samples', samples_path, :class => "dropdown-item" ) %>
             <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">FAQs</a>
+              <%= link_to('FAQs', welcome_faqs_path, :class => "dropdown-item") %>
             </div>
         </li>
         
