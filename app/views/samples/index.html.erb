@@ -1,35 +1,56 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Samples</h1>
+<h1>All CPA samples</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Language</th>
-      <th>Level</th>
-      <th>Score</th>
-      <th>Mode</th>
-      <th>Comment</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<h2>Test Language</h2>
+<% @samples.each do |sample| %>   
+  <% if sample.language == "test" %> 
+    LANGUAGE: <%= sample.language %> <br>
+    LEVEL: <%= sample.level %> <br>
+    SCORE: <%= sample.score %>%<br>
+    MODE: <%= sample.mode %><br>
+    
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#<%= sample.id %>">
+      COMMENTS
+    </button>
 
-  <tbody>
-    <% @samples.each do |sample| %>
-      <tr>
-        <td><%= sample.language %></td>
-        <td><%= sample.level %></td>
-        <td><%= sample.score %></td>
-        <td><%= sample.mode %></td>
-        <td><%= sample.comment %></td>
-        <td><%= link_to 'Show', sample %></td>
-        <td><%= link_to 'Edit', edit_sample_path(sample) %></td>
-        <td><%= link_to 'Destroy', sample, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+    <!-- Modal -->
+    <div class="modal fade" id="<%= sample.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Comments</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <%= sample.comment %>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+
+    <!-- allow resource editing to admins -->
+    <% if current_user && current_user.email == "gonzalo2000@hotmail.com" %>
+      <%= link_to 'Show', sample %>
+      <%= link_to 'Edit', edit_sample_path(sample) %>
+      <%= link_to 'Destroy', sample, method: :delete, data: { confirm: 'Are you sure?' } %>
     <% end %>
-  </tbody>
-</table>
+  <% else %>
+    This language has no entries yet :(
+  <% end %>
+  <br><br><br>
+<% end %>
 
-<br>
+<br><br><br>
 
-<%= link_to 'New Sample', new_sample_path %>
+<% if current_user && current_user.email == "gonzalo2000@hotmail.com" %>
+  <%= link_to 'New Sample', new_sample_path %>
+<% end %>
+
