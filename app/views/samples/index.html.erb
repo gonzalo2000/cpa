@@ -2,20 +2,27 @@
 
 <h1>All CPA samples</h1>
 
-<h2>Test Language</h2>
+Jump to: (language anchor links will go here :) <br><br>
+
+<!-- CREATE NEW SAMPLE -->
+<% if current_user && current_user.email == "gonzalo2000@hotmail.com" %>
+  <%= link_to 'New Sample', new_sample_path, :class => "btn btn-outline-success btn-lg" %>
+<% end %>
+
+<br><br>
+
+<h2>Spanish</h2>
 <% @samples.each do |sample| %>   
-  <% if sample.language == "test" %> 
-    LANGUAGE: <%= sample.language %> <br>
-    LEVEL: <%= sample.level %> <br>
-    SCORE: <%= sample.score %>%<br>
-    MODE: <%= sample.mode %><br>
-    INSTRUCTIONS: <%= link_to "Download", sample.instruction.url, target: :_blank %><br>
-    STUDENT SUBMISSION: <%= link_to "Download", sample.submission.url, target: :_blank %><br>
+  <% if sample.language == "Spanish" %> 
+    <%= sample.language %> <%= sample.level %><br>
+    <i><%= sample.mode %></i> (<%= sample.score %>%)<br>
+    <%= link_to "Instructions", sample.instruction.url, :class => "btn btn-primary btn-sm", target: :_blank %>
+    <%= link_to "Submission", sample.submission.url, :class => "btn btn-info btn-sm", target: :_blank %>
 
     
     <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#<%= sample.id %>">
-      COMMENTS
+    <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#<%= sample.id %>">
+      Comments
     </button>
 
     <!-- Modal -->
@@ -41,19 +48,247 @@
 
     <!-- allow resource editing to admins -->
     <% if current_user && current_user.email == "gonzalo2000@hotmail.com" %>
-      <%= link_to 'Show', sample %>
-      <%= link_to 'Edit', edit_sample_path(sample) %>
-      <%= link_to 'Destroy', sample, method: :delete, data: { confirm: 'Are you sure?' } %>
+      Admin resources:<br>
+      <%= link_to 'View', sample, :class => "btn btn-secondary btn-sm" %>
+      <%= link_to 'Edit', edit_sample_path(sample), :class => "btn btn-warning btn-sm" %>
+      <%= link_to 'Destroy', sample, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger btn-sm" %>
     <% end %>
-  <% else %>
-    This language has no entries yet :(
   <% end %>
-  <br><br><br>
 <% end %>
 
-<br><br><br>
+<br><br>
 
-<% if current_user && current_user.email == "gonzalo2000@hotmail.com" %>
-  <%= link_to 'New Sample', new_sample_path %>
+<h2>French</h2>
+<% @samples.each do |sample| %>   
+  <% if sample.language == "French" %> 
+    <%= sample.language %> <%= sample.level %><br>
+    <i><%= sample.mode %></i> (<%= sample.score %>%)<br>
+    <%= link_to "Instructions", sample.instruction.url, :class => "btn btn-primary btn-sm", target: :_blank %>
+    <%= link_to "Submission", sample.submission.url, :class => "btn btn-info btn-sm", target: :_blank %>
+
+    
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#<%= sample.id %>">
+      Comments
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="<%= sample.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Comments</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <%= sample.comment %>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+
+    <!-- allow resource editing to admins -->
+    <% if current_user && current_user.email == "gonzalo2000@hotmail.com" %>
+      Admin resources:<br>
+      <%= link_to 'View', sample, :class => "btn btn-secondary btn-sm" %>
+      <%= link_to 'Edit', edit_sample_path(sample), :class => "btn btn-warning btn-sm" %>
+      <%= link_to 'Destroy', sample, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger btn-sm" %>
+    <% end %>
+  <% end %>
 <% end %>
 
+<br><br>
+
+<h2>German</h2>
+<% @samples.each do |sample| %>   
+  <% if sample.language == "German" %> 
+    <%= sample.language %> <%= sample.level %><br>
+    <i><%= sample.mode %></i> (<%= sample.score %>%)<br>
+    <%= link_to "Instructions", sample.instruction.url, :class => "btn btn-primary btn-sm", target: :_blank %>
+    <%= link_to "Submission", sample.submission.url, :class => "btn btn-info btn-sm", target: :_blank %>
+
+    
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#<%= sample.id %>">
+      Comments
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="<%= sample.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Comments</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <%= sample.comment %>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+
+    <!-- allow resource editing to admins -->
+    <% if current_user && current_user.email == "gonzalo2000@hotmail.com" %>
+      Admin resources:<br>
+      <%= link_to 'View', sample, :class => "btn btn-secondary btn-sm" %>
+      <%= link_to 'Edit', edit_sample_path(sample), :class => "btn btn-warning btn-sm" %>
+      <%= link_to 'Destroy', sample, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger btn-sm" %>
+    <% end %>
+  <% end %>
+<% end %>
+
+<br><br>
+
+<h2>ASL</h2>
+<% @samples.each do |sample| %>   
+  <% if sample.language == "ASL" %> 
+    <%= sample.language %> <%= sample.level %><br>
+    <i><%= sample.mode %></i> (<%= sample.score %>%)<br>
+    <%= link_to "Instructions", sample.instruction.url, :class => "btn btn-primary btn-sm", target: :_blank %>
+    <%= link_to "Submission", sample.submission.url, :class => "btn btn-info btn-sm", target: :_blank %>
+
+    
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#<%= sample.id %>">
+      Comments
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="<%= sample.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Comments</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <%= sample.comment %>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+
+    <!-- allow resource editing to admins -->
+    <% if current_user && current_user.email == "gonzalo2000@hotmail.com" %>
+      Admin resources:<br>
+      <%= link_to 'View', sample, :class => "btn btn-secondary btn-sm" %>
+      <%= link_to 'Edit', edit_sample_path(sample), :class => "btn btn-warning btn-sm" %>
+      <%= link_to 'Destroy', sample, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger btn-sm" %>
+    <% end %>
+  <% end %>
+<% end %>
+
+<br><br>
+
+<h2>SFS</h2>
+<% @samples.each do |sample| %>   
+  <% if sample.language == "SFS" %> 
+    <%= sample.language %> <%= sample.level %><br>
+    <i><%= sample.mode %></i> (<%= sample.score %>%)<br>
+    <%= link_to "Instructions", sample.instruction.url, :class => "btn btn-primary btn-sm", target: :_blank %>
+    <%= link_to "Submission", sample.submission.url, :class => "btn btn-info btn-sm", target: :_blank %>
+
+    
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#<%= sample.id %>">
+      Comments
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="<%= sample.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Comments</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <%= sample.comment %>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+
+    <!-- allow resource editing to admins -->
+    <% if current_user && current_user.email == "gonzalo2000@hotmail.com" %>
+      Admin resources:<br>
+      <%= link_to 'View', sample, :class => "btn btn-secondary btn-sm" %>
+      <%= link_to 'Edit', edit_sample_path(sample), :class => "btn btn-warning btn-sm" %>
+      <%= link_to 'Destroy', sample, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger btn-sm" %>
+    <% end %>
+  <% end %>
+<% end %>
+
+<br><br>
+
+<h2>Latin</h2>
+<% @samples.each do |sample| %>   
+  <% if sample.language == "Latin" %> 
+    <%= sample.language %> <%= sample.level %><br>
+    <i><%= sample.mode %></i> (<%= sample.score %>%)<br>
+    <%= link_to "Instructions", sample.instruction.url, :class => "btn btn-primary btn-sm", target: :_blank %>
+    <%= link_to "Submission", sample.submission.url, :class => "btn btn-info btn-sm", target: :_blank %>
+
+    
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#<%= sample.id %>">
+      Comments
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="<%= sample.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Comments</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <%= sample.comment %>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+
+    <!-- allow resource editing to admins -->
+    <% if current_user && current_user.email == "gonzalo2000@hotmail.com" %>
+      Admin resources:<br>
+      <%= link_to 'View', sample, :class => "btn btn-secondary btn-sm" %>
+      <%= link_to 'Edit', edit_sample_path(sample), :class => "btn btn-warning btn-sm" %>
+      <%= link_to 'Destroy', sample, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger btn-sm" %>
+    <% end %>
+  <% end %>
+<% end %>
+
+<br><br>

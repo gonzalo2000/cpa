@@ -1,6 +1,4 @@
-<br>
 
-<div class="container">
   <h1>Loundoun County Public Schools</h1><br>
   <h2>World Languages & Cultures</h2>
   <br>
@@ -10,25 +8,14 @@
     <p>You are not signed in. <%= link_to('Log in', new_user_session_path) %> to access this resource.</p>
   
   <% else %>
-    <p>This website contains examples of CPA submissions to facilitate county-wide grade calibration. You can see <%= link_to('all samples here', samples_path) %>.
-    <br> 
-    For more information about how to use this resource, visit the <%= link_to('FAQs', '#') %>.
-    <br>
-    Or choose your language:
-    <ul>
-      <li><%= link_to('Spanish', '#') %></li>
-      <li><%= link_to('French', '#') %></li>
-      <li><%= link_to('German', '#') %></li>
-      <li><%= link_to('ASL', '#') %></li>
-      <li><%= link_to('SFS', '#') %></li>
-      <li><%= link_to('Latin', '#') %></li>
-    </ul> 
+    <p>This website contains examples of CPA submissions to facilitate county-wide grade calibration. 
+    <br><br>
+    <%= link_to('CPA Samples', samples_path, :class => "btn btn-outline-primary" ) %>
+    <%= link_to('FAQs', '#', :class => "btn btn-outline-info") %>
+    <br><br>
   <% end %>
 
   <% if current_user && current_user.email == "gonzalo2000@hotmail.com" %>
-    <p>You have editing rights :) </p>
-    <%= link_to 'New Sample', new_sample_path %>
+    <p class="text-success">You have editing rights :) </p>
+    <%= link_to 'New Sample', new_sample_path, :class => "btn btn-outline-success" %>
   <% end %>
-  
-</div>
-
