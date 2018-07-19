@@ -10,7 +10,7 @@
     <p>You are not signed in. <%= link_to('Log in', new_user_session_path) %> to access this resource.</p>
   
   <% else %>
-    <p>This website contains examples of CPA submissions to facilitate county-wide grade calibration.
+    <p>This website contains examples of CPA submissions to facilitate county-wide grade calibration. You can see <%= link_to('all samples here', samples_path) %>.
     <br> 
     For more information about how to use this resource, visit the <%= link_to('FAQs', '#') %>.
     <br>
@@ -23,6 +23,12 @@
       <li><%= link_to('SFS', '#') %></li>
       <li><%= link_to('Latin', '#') %></li>
     </ul> 
+  <% end %>
+
+  <% if current_user && current_user.email == "gonzalo2000@hotmail.com" %>
+    <p>You have editing rights :) </p>
+    <%= link_to 'New Sample', new_sample_path %>
+
   <% end %>
 </div>
 
