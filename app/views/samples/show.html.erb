@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Language:</strong>
+  <%= @sample.language %>
+</p>
+
+<p>
+  <strong>Level:</strong>
+  <%= @sample.level %>
+</p>
+
+<p>
+  <strong>Score:</strong>
+  <%= @sample.score %>
+</p>
+
+<p>
+  <strong>Mode:</strong>
+  <%= @sample.mode %>
+</p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= @sample.comment %>
+</p>
+
+<%= link_to 'Edit', edit_sample_path(@sample) %> |
+<%= link_to 'Back', samples_path %>

@@ -1,0 +1,17 @@
+
+<%= simple_form_for(@sample) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.input :language %>
+    <%= f.input :level %>
+    <%= f.input :score %>
+    <%= f.input :mode %>
+    <%= f.input :comment %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
