@@ -6,6 +6,12 @@ class SamplesController < ApplicationController
   # GET /samples.json
   def index
     @samples = Sample.all
+    @spanish_samples = Sample.where(language: "Spanish")
+    @french_samples = Sample.where(language: "French")
+    @german_samples = Sample.where(language: "German")
+    @asl_samples = Sample.where(language: "ASL")
+    @sfs_samples = Sample.where(language: "SFS")
+    @latin_samples = Sample.where(language: "Latin")
   end
 
   # GET /samples/1

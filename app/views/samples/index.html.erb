@@ -14,9 +14,8 @@ Jump to: (language anchor links will go here :) <br><br>
 <h2>Spanish <i id="click-spanish" class="fas fa-caret-down"></i></h2>
 
 <div id="spanish-examples" class="initiallyHidden">
-  <% @samples.each do |sample| %>   
-  <% if sample.language == "Spanish" %> 
-    <%= sample.language %> <%= sample.level %><br>
+  <% @spanish_samples.each do |sample| %>   
+    Spanish <%= sample.level %><br>
     <i><%= sample.mode %></i> (<%= sample.score %>%)<br>
     <%= link_to "Instructions", sample.instruction.url, :class => "btn btn-primary btn-sm", target: :_blank %>
     <%= link_to "Submission", sample.submission.url, :class => "btn btn-info btn-sm", target: :_blank %>
@@ -56,7 +55,6 @@ Jump to: (language anchor links will go here :) <br><br>
       <%= link_to 'Destroy', sample, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger btn-sm" %>
     <% end %>
     <br><br>
-  <% end %>
 <% end %>
 </div>
 
@@ -65,9 +63,8 @@ Jump to: (language anchor links will go here :) <br><br>
 <h2>French <i id="click-french" class="fas fa-caret-down"></i></h2>
 
 <div id="french-examples" class="initiallyHidden">
-  <% @samples.each do |sample| %>   
-  <% if sample.language == "French" %> 
-    <%= sample.language %> <%= sample.level %><br>
+  <% @french_samples.each do |sample| %>   
+    French <%= sample.level %><br>
     <i><%= sample.mode %></i> (<%= sample.score %>%)<br>
     <%= link_to "Instructions", sample.instruction.url, :class => "btn btn-primary btn-sm", target: :_blank %>
     <%= link_to "Submission", sample.submission.url, :class => "btn btn-info btn-sm", target: :_blank %>
@@ -107,7 +104,6 @@ Jump to: (language anchor links will go here :) <br><br>
       <%= link_to 'Destroy', sample, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger btn-sm" %>
     <% end %>
     <br><br>
-  <% end %>
 <% end %>
 </div>
 
@@ -116,9 +112,8 @@ Jump to: (language anchor links will go here :) <br><br>
 <h2>German <i id="click-german" class="fas fa-caret-down"></i></h2>
 
 <div id="german-examples" class="initiallyHidden">
-  <% @samples.each do |sample| %>   
-  <% if sample.language == "German" %> 
-    <%= sample.language %> <%= sample.level %><br>
+  <% @german_samples.each do |sample| %>    
+    German <%= sample.level %><br>
     <i><%= sample.mode %></i> (<%= sample.score %>%)<br>
     <%= link_to "Instructions", sample.instruction.url, :class => "btn btn-primary btn-sm", target: :_blank %>
     <%= link_to "Submission", sample.submission.url, :class => "btn btn-info btn-sm", target: :_blank %>
@@ -158,7 +153,6 @@ Jump to: (language anchor links will go here :) <br><br>
       <%= link_to 'Destroy', sample, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger btn-sm" %>
     <% end %>
     <br><br>
-  <% end %>
 <% end %>
 </div>
 
@@ -167,14 +161,12 @@ Jump to: (language anchor links will go here :) <br><br>
 <h2>ASL <i id="click-asl" class="fas fa-caret-down"></i></h2>
 
 <div id="asl-examples" class="initiallyHidden">
-  <% @samples.each do |sample| %>   
-  <% if sample.language == "ASL" %> 
-    <%= sample.language %> <%= sample.level %><br>
+  <% @asl_samples.each do |sample| %>   
+    ASL <%= sample.level %><br>
     <i><%= sample.mode %></i> (<%= sample.score %>%)<br>
     <%= link_to "Instructions", sample.instruction.url, :class => "btn btn-primary btn-sm", target: :_blank %>
     <%= link_to "Submission", sample.submission.url, :class => "btn btn-info btn-sm", target: :_blank %>
 
-    
     <!-- Button trigger modal -->
     <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#<%= sample.id %>">
       Comments
@@ -209,7 +201,6 @@ Jump to: (language anchor links will go here :) <br><br>
       <%= link_to 'Destroy', sample, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger btn-sm" %>
     <% end %>
     <br><br>
-  <% end %>
 <% end %>
 </div>
 
@@ -218,9 +209,8 @@ Jump to: (language anchor links will go here :) <br><br>
 <h2>SFS <i id="click-sfs" class="fas fa-caret-down"></i></h2>
 
 <div id="sfs-examples" class="initiallyHidden">
-  <% @samples.each do |sample| %>   
-  <% if sample.language == "SFS" %> 
-    <%= sample.language %> <%= sample.level %><br>
+  <% @sfs_samples.each do |sample| %>    
+    SFS <%= sample.level %><br>
     <i><%= sample.mode %></i> (<%= sample.score %>%)<br>
     <%= link_to "Instructions", sample.instruction.url, :class => "btn btn-primary btn-sm", target: :_blank %>
     <%= link_to "Submission", sample.submission.url, :class => "btn btn-info btn-sm", target: :_blank %>
@@ -260,7 +250,6 @@ Jump to: (language anchor links will go here :) <br><br>
       <%= link_to 'Destroy', sample, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger btn-sm" %>
     <% end %>
     <br><br>
-  <% end %>
 <% end %>
 </div>
 
@@ -269,9 +258,8 @@ Jump to: (language anchor links will go here :) <br><br>
 <h2>Latin <i id="click-latin" class="fas fa-caret-down"></i></h2>
 
 <div id="latin-examples" class="initiallyHidden">
-  <% @samples.each do |sample| %>   
-  <% if sample.language == "Latin" %> 
-    <%= sample.language %> <%= sample.level %><br>
+  <% @latin_samples.each do |sample| %>   
+    Latin <%= sample.level %><br>
     <i><%= sample.mode %></i> (<%= sample.score %>%)<br>
     <%= link_to "Instructions", sample.instruction.url, :class => "btn btn-primary btn-sm", target: :_blank %>
     <%= link_to "Submission", sample.submission.url, :class => "btn btn-info btn-sm", target: :_blank %>
@@ -311,7 +299,6 @@ Jump to: (language anchor links will go here :) <br><br>
       <%= link_to 'Destroy', sample, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger btn-sm" %>
     <% end %>
     <br><br>
-  <% end %>
 <% end %>
 </div>
 
