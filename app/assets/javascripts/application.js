@@ -19,3 +19,35 @@
 //= require tether
 //= require bootstrap-sprockets
 //= require_tree .
+
+$(document).ready(function(){
+  $('#click-spanish').click(function() {
+    $('#spanish-examples').toggle('1000');
+    $(this).toggleClass("fa-caret-down fa-caret-up");
+  });
+
+  $('#click-french').click(function() {
+    $('#french-examples').toggle('1000');
+    $(this).toggleClass("fa-caret-down fa-caret-up");
+  });
+
+  $('#click-german').click(function() {
+    $('#german-examples').toggle('1000');
+    $(this).toggleClass("fa-caret-down fa-caret-up");
+  });
+
+  $('#click-asl').click(function() {
+    $('#asl-examples').toggle('1000');
+    $(this).toggleClass("fa-caret-down fa-caret-up");
+  });
+
+  $('#click-sfs').click(function() {
+    $('#sfs-examples').toggle('1000');
+    $(this).toggleClass("fa-caret-down fa-caret-up");
+  });
+
+  $('#click-latin').click(function() {
+    $('#latin-examples').toggle('1000');
+    $(this).toggleClass("fa-caret-down fa-caret-up");
+  });
+});

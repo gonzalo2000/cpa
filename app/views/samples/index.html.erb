@@ -11,8 +11,10 @@ Jump to: (language anchor links will go here :) <br><br>
 
 <br><br>
 
-<h2>Spanish</h2>
-<% @samples.each do |sample| %>   
+<h2>Spanish <i id="click-spanish" class="fas fa-caret-down"></i></h2>
+
+<div id="spanish-examples" class="initiallyHidden">
+  <% @samples.each do |sample| %>   
   <% if sample.language == "Spanish" %> 
     <%= sample.language %> <%= sample.level %><br>
     <i><%= sample.mode %></i> (<%= sample.score %>%)<br>
@@ -56,11 +58,14 @@ Jump to: (language anchor links will go here :) <br><br>
     <br><br>
   <% end %>
 <% end %>
+</div>
 
 <br>
 
-<h2>French</h2>
-<% @samples.each do |sample| %>   
+<h2>French <i id="click-french" class="fas fa-caret-down"></i></h2>
+
+<div id="french-examples" class="initiallyHidden">
+  <% @samples.each do |sample| %>   
   <% if sample.language == "French" %> 
     <%= sample.language %> <%= sample.level %><br>
     <i><%= sample.mode %></i> (<%= sample.score %>%)<br>
@@ -101,13 +106,17 @@ Jump to: (language anchor links will go here :) <br><br>
       <%= link_to 'Edit', edit_sample_path(sample), :class => "btn btn-warning btn-sm" %>
       <%= link_to 'Destroy', sample, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger btn-sm" %>
     <% end %>
+    <br><br>
   <% end %>
 <% end %>
+</div>
 
-<br><br>
+<br>
 
-<h2>German</h2>
-<% @samples.each do |sample| %>   
+<h2>German <i id="click-german" class="fas fa-caret-down"></i></h2>
+
+<div id="german-examples" class="initiallyHidden">
+  <% @samples.each do |sample| %>   
   <% if sample.language == "German" %> 
     <%= sample.language %> <%= sample.level %><br>
     <i><%= sample.mode %></i> (<%= sample.score %>%)<br>
@@ -148,13 +157,17 @@ Jump to: (language anchor links will go here :) <br><br>
       <%= link_to 'Edit', edit_sample_path(sample), :class => "btn btn-warning btn-sm" %>
       <%= link_to 'Destroy', sample, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger btn-sm" %>
     <% end %>
+    <br><br>
   <% end %>
 <% end %>
+</div>
 
-<br><br>
+<br>
 
-<h2>ASL</h2>
-<% @samples.each do |sample| %>   
+<h2>ASL <i id="click-asl" class="fas fa-caret-down"></i></h2>
+
+<div id="asl-examples" class="initiallyHidden">
+  <% @samples.each do |sample| %>   
   <% if sample.language == "ASL" %> 
     <%= sample.language %> <%= sample.level %><br>
     <i><%= sample.mode %></i> (<%= sample.score %>%)<br>
@@ -195,13 +208,17 @@ Jump to: (language anchor links will go here :) <br><br>
       <%= link_to 'Edit', edit_sample_path(sample), :class => "btn btn-warning btn-sm" %>
       <%= link_to 'Destroy', sample, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger btn-sm" %>
     <% end %>
+    <br><br>
   <% end %>
 <% end %>
+</div>
 
-<br><br>
+<br>
 
-<h2>SFS</h2>
-<% @samples.each do |sample| %>   
+<h2>SFS <i id="click-sfs" class="fas fa-caret-down"></i></h2>
+
+<div id="sfs-examples" class="initiallyHidden">
+  <% @samples.each do |sample| %>   
   <% if sample.language == "SFS" %> 
     <%= sample.language %> <%= sample.level %><br>
     <i><%= sample.mode %></i> (<%= sample.score %>%)<br>
@@ -242,13 +259,17 @@ Jump to: (language anchor links will go here :) <br><br>
       <%= link_to 'Edit', edit_sample_path(sample), :class => "btn btn-warning btn-sm" %>
       <%= link_to 'Destroy', sample, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger btn-sm" %>
     <% end %>
+    <br><br>
   <% end %>
 <% end %>
+</div>
 
-<br><br>
+<br>
 
-<h2>Latin</h2>
-<% @samples.each do |sample| %>   
+<h2>Latin <i id="click-latin" class="fas fa-caret-down"></i></h2>
+
+<div id="latin-examples" class="initiallyHidden">
+  <% @samples.each do |sample| %>   
   <% if sample.language == "Latin" %> 
     <%= sample.language %> <%= sample.level %><br>
     <i><%= sample.mode %></i> (<%= sample.score %>%)<br>
@@ -289,7 +310,9 @@ Jump to: (language anchor links will go here :) <br><br>
       <%= link_to 'Edit', edit_sample_path(sample), :class => "btn btn-warning btn-sm" %>
       <%= link_to 'Destroy', sample, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger btn-sm" %>
     <% end %>
+    <br><br>
   <% end %>
 <% end %>
+</div>
 
 <br>
