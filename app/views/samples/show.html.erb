@@ -1,4 +1,3 @@
-<p id="notice"><%= notice %></p>
 
 <p>
   <strong>Language:</strong>
@@ -35,5 +34,6 @@
   <%= link_to "Download Submission", @sample.submission.url, target: :_blank %>
 </p>
 
-<%= link_to 'Edit', edit_sample_path(@sample) %> |
-<%= link_to 'All samples', samples_path %>
+<%= link_to 'Edit', edit_sample_path(@sample), :class => "btn btn-warning btn-sm" %> 
+<br><br>
+<%= link_to 'All samples', samples_path, :class => "btn btn-info btn-sm" %>
