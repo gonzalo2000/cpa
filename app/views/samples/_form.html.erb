@@ -1,19 +1,24 @@
-<p>All fields must have content <i class="far fa-smile"></i></p>
+<% if current_user.email == "gonzalo2000@hotmail.com" %>
+  <p>All fields must have content <i class="far fa-smile"></i></p>
 
-<%= simple_form_for(@sample) do |f| %>
-  <%= f.error_notification %>
-  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+  <%= simple_form_for(@sample) do |f| %>
+    <%= f.error_notification %>
+    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-  <div class="form-inputs">
-    <%= f.input :language, collection: [ "Spanish", "French", "German", "ASL", "SFS", "Latin" ] %>
-    <%= f.input :level, collection: [*1..6] %>
-    <%= f.input :score, collection: [*0..100].reverse %>
-    <%= f.input :mode, collection: [ "Presentational writing", "Presentational speaking", "Interpersonal writing", "Interpersonal speaking" ] %>
-    <%= f.input :comment %>
-    <%= f.input :instruction, hint: '(PDF only)', input_html: { accept: "application/pdf" } %>
-    <%= f.input :submission, hint: '(PDF, sound or video only)', input_html: { accept: "application/pdf, audio/mp3, audio/wma, audio/wav, audio/m4a, video/avi, video/flv, video/wmv, video/mov, video/mp4" } %>
-  </div>
+    <div class="form-inputs">
+      <%= f.input :language, collection: [ "Spanish", "French", "German", "ASL", "SFS", "Latin" ] %>
+      <%= f.input :level, collection: [*1..6] %>
+      <%= f.input :score, collection: [*0..100].reverse %>
+      <%= f.input :mode, collection: [ "Presentational writing", "Presentational speaking", "Interpersonal writing", "Interpersonal speaking" ] %>
+      <%= f.input :comment %>
+      <%= f.input :instruction, hint: '(PDF only)', input_html: { accept: "application/pdf" } %>
+      <%= f.input :submission, hint: '(PDF, sound or video only)', input_html: { accept: "application/pdf, audio/mp3, audio/wma, audio/wav, audio/m4a, video/avi, video/flv, video/wmv, video/mov, video/mp4" } %>
+    </div>
 
-  
-    <%= f.submit "Submit", :class => "btn btn-primary" %>
+      <%= f.submit "Submit", :class => "btn btn-primary" %>
+  <% end %>
+
+<% else %>
+  <br>
+  <p>You don't have admin rights :(</p>
 <% end %>
