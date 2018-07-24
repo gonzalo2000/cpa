@@ -2,13 +2,14 @@
 
 <h1>All CPA samples</h1>
 
-<p>Click on the language's arrow to toggle. Clicking "Instructions" & "Submissions" downloads the files.</p>
-
 <!-- new sample button -->
 <% if current_user && current_user.email == "gonzalo2000@hotmail.com" %>
-  <%= link_to 'New Sample', new_sample_path, :class => "btn btn-outline-success btn-lg" %>
   <br>
+  <%= link_to 'New Sample', new_sample_path, :class => "btn btn-outline-success btn-lg" %>
+  <br><br>
 <% end %>
+
+<p>Click on the language's arrows (<i class="fa fa-caret-down" aria-hidden="true"></i> <i class="fa fa-caret-up" aria-hidden="true"></i>) to toggle. The "Instructions" & "Submission" buttons download the corresponding files.</p>
 
 <br>
 
