@@ -3,33 +3,30 @@
   <span class="navbar-toggler-icon"></span>
   </button>
   
-  <%= link_to "CPAs WorkingTitle", root_path, :class => "navbar-brand" %>
+  <%= link_to "LCPS CPA Samples", root_path, :class => "navbar-brand" %>
 
-  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-    <ul class="nav navbar-nav ml-auto w-100 justify-content-end">
-
-      <% if user_signed_in? %>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Menu
-          </a>
+<div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+  <ul class="nav navbar-nav ml-auto w-100 justify-content-end">
+    <% if user_signed_in? %>
+      <li class="nav-item">
+        <%= link_to('Samples', samples_path, :class => "nav-link" ) %>
+      </li>
+      <li class="nav-item">
+        <%= link_to('FAQs', welcome_faqs_path, :class => "nav-link") %>
+      </li>
           
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <%= link_to('CPA Samples', samples_path, :class => "dropdown-item" ) %>
-            <div class="dropdown-divider"></div>
-              <%= link_to('FAQs', welcome_faqs_path, :class => "dropdown-item") %>
-            </div>
-        </li>
-        
-        <div class="dropdown-divider"></div>
-          <li class="nav-item">
-            <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'nav-link' %>
-            </li>
-          <% else %>
-            <li class="nav-item">
-              <%= link_to 'Sign in', new_user_session_path, class: 'nav-link' %>
-            </li>
-          <% end %>
+      <div class="dropdown-divider"></div>
+      
+      <li class="nav-item">
+        <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'nav-link' %>
+      </li>
+    
+    <% else %>
+      <li class="nav-item">
+        <%= link_to 'Sign in', new_user_session_path, class: 'nav-link' %>
+      </li>
+  
+    <% end %>
     </ul>
   </div>
 </nav>

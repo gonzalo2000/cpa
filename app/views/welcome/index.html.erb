@@ -17,6 +17,6 @@
   <% end %>
 
   <% if current_user && current_user.email == "gonzalo2000@hotmail.com" %>
-    <p class="text-success">You have editing rights :) </p>
+    <p class="text-success">You have editing rights <i class="far fa-smile"></i></p>
     <%= link_to 'New Sample', new_sample_path, :class => "btn btn-outline-success" %>
   <% end %>
