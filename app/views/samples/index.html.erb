@@ -18,7 +18,9 @@
 <div id="spanish-examples" class="initiallyHidden">
   <% @spanish_samples.each do |sample| %>   
     Spanish <%= sample.level %><br>
-    <i><%= sample.mode %></i> (<%= sample.score %>%)<br>
+    Theme: <%= sample.theme %><br>
+    Mode: <%= sample.mode %><br>
+    Score: <%= sample.score %>%<br>
     <%= link_to "Instructions", sample.instruction.url, :class => "btn btn-primary btn-sm", target: :_blank %>
     <%= link_to "Submission", sample.submission.url, :class => "btn btn-info btn-sm", target: :_blank %>
 
@@ -66,7 +68,9 @@
 <div id="french-examples" class="initiallyHidden">
   <% @french_samples.each do |sample| %>   
     French <%= sample.level %><br>
-    <i><%= sample.mode %></i> (<%= sample.score %>%)<br>
+    Theme: <%= sample.theme %><br>
+    Mode: <%= sample.mode %><br>
+    Score: <%= sample.score %>%<br>
     <%= link_to "Instructions", sample.instruction.url, :class => "btn btn-primary btn-sm", target: :_blank %>
     <%= link_to "Submission", sample.submission.url, :class => "btn btn-info btn-sm", target: :_blank %>
     
@@ -114,7 +118,9 @@
 <div id="german-examples" class="initiallyHidden">
   <% @german_samples.each do |sample| %>    
     German <%= sample.level %><br>
-    <i><%= sample.mode %></i> (<%= sample.score %>%)<br>
+    Theme: <%= sample.theme %><br>
+    Mode: <%= sample.mode %><br>
+    Score: <%= sample.score %>%<br>
     <%= link_to "Instructions", sample.instruction.url, :class => "btn btn-primary btn-sm", target: :_blank %>
     <%= link_to "Submission", sample.submission.url, :class => "btn btn-info btn-sm", target: :_blank %>
 
@@ -162,7 +168,9 @@
 <div id="asl-examples" class="initiallyHidden">
   <% @asl_samples.each do |sample| %>   
     ASL <%= sample.level %><br>
-    <i><%= sample.mode %></i> (<%= sample.score %>%)<br>
+    Theme: <%= sample.theme %><br>
+    Mode: <%= sample.mode %><br>
+    Score: <%= sample.score %>%<br>
     <%= link_to "Instructions", sample.instruction.url, :class => "btn btn-primary btn-sm", target: :_blank %>
     <%= link_to "Submission", sample.submission.url, :class => "btn btn-info btn-sm", target: :_blank %>
 
@@ -210,7 +218,9 @@
 <div id="sfs-examples" class="initiallyHidden">
   <% @sfs_samples.each do |sample| %>    
     SFS <%= sample.level %><br>
-    <i><%= sample.mode %></i> (<%= sample.score %>%)<br>
+    Theme: <%= sample.theme %><br>
+    Mode: <%= sample.mode %><br>
+    Score: <%= sample.score %>%<br>
     <%= link_to "Instructions", sample.instruction.url, :class => "btn btn-primary btn-sm", target: :_blank %>
     <%= link_to "Submission", sample.submission.url, :class => "btn btn-info btn-sm", target: :_blank %>
 
@@ -258,7 +268,9 @@
 <div id="latin-examples" class="initiallyHidden">
   <% @latin_samples.each do |sample| %>   
     Latin <%= sample.level %><br>
-    <i><%= sample.mode %></i> (<%= sample.score %>%)<br>
+    Theme: <%= sample.theme %><br>
+    Mode: <%= sample.mode %><br>
+    Score: <%= sample.score %>%<br>
     <%= link_to "Instructions", sample.instruction.url, :class => "btn btn-primary btn-sm", target: :_blank %>
     <%= link_to "Submission", sample.submission.url, :class => "btn btn-info btn-sm", target: :_blank %>
 

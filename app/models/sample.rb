@@ -5,6 +5,7 @@ class Sample < ApplicationRecord
   validates :instruction, presence: true
   validates :submission, presence: true
   validates :language, presence: true
+  validates :theme, presence: true
   validates :level, presence: true
   validates :score, presence: true
   validates :mode, presence: true

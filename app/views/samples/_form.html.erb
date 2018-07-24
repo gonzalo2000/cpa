@@ -8,6 +8,7 @@
     <div class="form-inputs">
       <%= f.input :language, collection: [ "Spanish", "French", "German", "ASL", "SFS", "Latin" ] %>
       <%= f.input :level, collection: [*1..6] %>
+      <%= f.input :theme, collection: ["Contemporary life", "Science & technology", "Global challenges", "Beauty & aesthetics", "Families & communities", "Personal & public identities", "Change over time", "Media & mass communications", "Literary genre & style", "Roman values", "War & empire", "Leadership", "Views of non-Romans", "History & memory", "Human beings & the gods"] %>
       <%= f.input :score, collection: [*0..100].reverse %>
       <%= f.input :mode, collection: [ "Presentational writing", "Presentational speaking", "Interpersonal writing", "Interpersonal speaking" ] %>
       <%= f.input :comment %>
