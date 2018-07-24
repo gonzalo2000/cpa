@@ -63,7 +63,7 @@ class SamplesController < ApplicationController
   def destroy
     @sample.destroy
     respond_to do |format|
-      format.html { redirect_to samples_url, notice: 'Sample was successfully destroyed.' }
+      format.html { redirect_to samples_url, notice: 'Sample was successfully deleted.' }
       format.json { head :no_content }
     end
   end
