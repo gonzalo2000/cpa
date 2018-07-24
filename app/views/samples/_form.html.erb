@@ -1,3 +1,4 @@
+<p>All of the fields must have content <i class="far fa-smile"></i></p>
 
 <%= simple_form_for(@sample) do |f| %>
   <%= f.error_notification %>
@@ -9,8 +10,8 @@
     <%= f.input :score, collection: [*0..100].reverse %>
     <%= f.input :mode, collection: [ "Presentational writing", "Presentational speaking", "Interpersonal writing", "Interpersonal speaking" ] %>
     <%= f.input :comment %>
-    <%= f.input :instruction, input_html: { accept: "application/pdf" } %>
-    <%= f.input :submission, input_html: { accept: "application/pdf, audio/mp3, audio/wma, audio/wav, audio/m4a" } %>
+    <%= f.input :instruction, hint: '(PDF only)', input_html: { accept: "application/pdf" } %>
+    <%= f.input :submission, hint: '(PDF, sound or video only)', input_html: { accept: "application/pdf, audio/mp3, audio/wma, audio/wav, audio/m4a" } %>
   </div>
 
   
