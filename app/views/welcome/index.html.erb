@@ -3,14 +3,16 @@
 <h1>Loundoun County Public Schools</h1><br>
 <h2>World Languages & Cultures</h2>
 <br>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam mattis ultricies condimentum. Cras pulvinar molestie ornare. Donec vehicula tempor lorem, id pharetra mi feugiat ac. Duis vitae leo maximus, convallis quam posuere, tristique metus. Integer massa augue, tincidunt eget mi nec, facilisis viverra libero.</p>
+
+<p>This website contains examples of CPA submissions to facilitate county-wide grade calibration.</p> 
 
 <% unless user_signed_in? %>
     
   <p>You are not signed in. <%= link_to('Log in', new_user_session_path) %> to access this resource.</p>
   
 <% else %>
-  <p>This website contains examples of CPA submissions to facilitate county-wide grade calibration. 
-  <br><br>
+  <br>
   <%= link_to('CPA Samples', samples_path, :class => "btn btn-outline-primary" ) %>
   <%= link_to('FAQs', welcome_faqs_path, :class => "btn btn-outline-info") %>
   <br><br>
