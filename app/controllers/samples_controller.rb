@@ -1,6 +1,7 @@
 class SamplesController < ApplicationController
   before_action :set_sample, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
+  before_action :authenticate_admin!, only: [:show, :new, :edit, :create, :update, :destroy]
 
   # GET /samples
   # GET /samples.json

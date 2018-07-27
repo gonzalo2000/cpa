@@ -3,7 +3,7 @@
 <h1>All CPA samples</h1>
 
 <!-- new sample button -->
-<% if current_user && current_user.email == "gonzalo2000@hotmail.com" %>
+<% if current_user.admin? %>
   <br>
   <%= link_to 'New Sample', new_sample_path, :class => "btn btn-outline-success btn-lg" %>
   <br><br>
@@ -51,7 +51,7 @@
     <br>
 
     <!-- allow resource editing to admins -->
-    <% if current_user && current_user.email == "gonzalo2000@hotmail.com" %>
+    <% if current_user.admin? %>
       Admin resources:<br>
       <%= link_to 'View', sample, :class => "btn btn-secondary btn-sm" %>
       <%= link_to 'Edit', edit_sample_path(sample), :class => "btn btn-warning btn-sm" %>
@@ -101,7 +101,7 @@
     <br>
 
     <!-- allow resource editing to admins -->
-    <% if current_user && current_user.email == "gonzalo2000@hotmail.com" %>
+    <% if current_user.admin? %>
       Admin resources:<br>
       <%= link_to 'View', sample, :class => "btn btn-secondary btn-sm" %>
       <%= link_to 'Edit', edit_sample_path(sample), :class => "btn btn-warning btn-sm" %>
@@ -151,7 +151,7 @@
     <br>
 
     <!-- allow resource editing to admins -->
-    <% if current_user && current_user.email == "gonzalo2000@hotmail.com" %>
+    <% if current_user.admin? %>
       Admin resources:<br>
       <%= link_to 'View', sample, :class => "btn btn-secondary btn-sm" %>
       <%= link_to 'Edit', edit_sample_path(sample), :class => "btn btn-warning btn-sm" %>
@@ -201,7 +201,7 @@
     <br>
 
     <!-- allow resource editing to admins -->
-    <% if current_user && current_user.email == "gonzalo2000@hotmail.com" %>
+    <% if current_user.admin? %>
       Admin resources:<br>
       <%= link_to 'View', sample, :class => "btn btn-secondary btn-sm" %>
       <%= link_to 'Edit', edit_sample_path(sample), :class => "btn btn-warning btn-sm" %>
@@ -251,7 +251,7 @@
     <br>
 
     <!-- allow resource editing to admins -->
-    <% if current_user && current_user.email == "gonzalo2000@hotmail.com" %>
+    <% if current_user.admin? %>
       Admin resources:<br>
       <%= link_to 'View', sample, :class => "btn btn-secondary btn-sm" %>
       <%= link_to 'Edit', edit_sample_path(sample), :class => "btn btn-warning btn-sm" %>
@@ -301,7 +301,7 @@
     <br>
 
     <!-- allow resource editing to admins -->
-    <% if current_user && current_user.email == "gonzalo2000@hotmail.com" %>
+    <% if current_user.admin? %>
       Admin resources:<br>
       <%= link_to 'View', sample, :class => "btn btn-secondary btn-sm" %>
       <%= link_to 'Edit', edit_sample_path(sample), :class => "btn btn-warning btn-sm" %>

@@ -1,22 +1,22 @@
 <% provide(:title, 'Welcome') %>
 
-  <h1>Loundoun County Public Schools</h1><br>
-  <h2>World Languages & Cultures</h2>
-  <br>
+<h1>Loundoun County Public Schools</h1><br>
+<h2>World Languages & Cultures</h2>
+<br>
 
-  <% unless user_signed_in? %>
+<% unless user_signed_in? %>
     
-    <p>You are not signed in. <%= link_to('Log in', new_user_session_path) %> to access this resource.</p>
+  <p>You are not signed in. <%= link_to('Log in', new_user_session_path) %> to access this resource.</p>
   
-  <% else %>
-    <p>This website contains examples of CPA submissions to facilitate county-wide grade calibration. 
-    <br><br>
-    <%= link_to('CPA Samples', samples_path, :class => "btn btn-outline-primary" ) %>
-    <%= link_to('FAQs', welcome_faqs_path, :class => "btn btn-outline-info") %>
-    <br><br>
-  <% end %>
+<% else %>
+  <p>This website contains examples of CPA submissions to facilitate county-wide grade calibration. 
+  <br><br>
+  <%= link_to('CPA Samples', samples_path, :class => "btn btn-outline-primary" ) %>
+  <%= link_to('FAQs', welcome_faqs_path, :class => "btn btn-outline-info") %>
+  <br><br>
+<% end %>
 
-  <% if current_user && current_user.email == "gonzalo2000@hotmail.com" %>
-    <p class="text-success">You have editing rights <i class="far fa-smile"></i></p>
-    <%= link_to 'New Sample', new_sample_path, :class => "btn btn-outline-success" %>
-  <% end %>
+<% if current_user.try(:admin?) %>
+  <p class="text-success">You have admin rights <i class="far fa-smile"></i></p>
+  <%= link_to 'New Sample', new_sample_path, :class => "btn btn-outline-success" %>
+<% end %>
