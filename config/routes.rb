@@ -6,5 +6,5 @@ Rails.application.routes.draw do
   root 'welcome#index'
   get 'welcome/faqs', :to => 'welcome#faqs'
 
- 
+  mount SimpleDiscussion::Engine => "/forum" 
 end
