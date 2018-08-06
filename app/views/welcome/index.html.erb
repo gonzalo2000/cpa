@@ -7,13 +7,17 @@
 
 <p>A team of curriculum leaders curate the showcased submissions, which are organized by language, level, communicative mode, curricular theme, and score. In addition to perusing each sample (in either written, audio, or video format), users can also view the instructions that the student received, and the grader's comments.</p> 
 
+<br>
 
+<%= link_to('FAQs', welcome_faqs_path, :class => "btn btn-outline-info") %>
+
+<br>
 <% unless user_signed_in? %>    
+  <br>
   <p>You are not signed in. <%= link_to('Log in', new_user_session_path) %> to access this resource.</p>
 <% else %>
   <br>
   <%= link_to('CPA Samples', samples_path, :class => "btn btn-outline-primary" ) %>
-  <%= link_to('FAQs', welcome_faqs_path, :class => "btn btn-outline-info") %>
   <br><br>
 <% end %>
 
